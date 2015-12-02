@@ -1,0 +1,23 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    genius (0.1.1)
+      httparty (~> 0.11.0)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
+    mini_portile (0.6.2)
+    multi_json (1.11.2)
+    multi_xml (0.5.5)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  genius (~> 0.1.1)
+  nokogiri
+
+BUNDLED WITH
+   1.10.6
