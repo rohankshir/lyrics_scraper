@@ -9,6 +9,8 @@ import string
 import lda
 import numpy as np
 from nltk.corpus import stopwords
+from pprint import pprint
+
 
 def get_document(filepath):
     with open(filepath, 'r') as f:
@@ -58,7 +60,6 @@ def lda_lda(docs, num_topics, num_iters, n_top_words):
 
 
 def gensim_lda(docs, num_topics, num_iters, num_top_words ):
-
     texts = []
     en_stop = stopwords.words('english')
     for i in docs:
@@ -78,16 +79,20 @@ def gensim_lda(docs, num_topics, num_iters, num_top_words ):
         
     # convert tokenized documents into a document-term matrix
     corpus = [dictionary.doc2bow(text) for text in texts]
-        
-    # generate LDA model
-    ldamodel = models.ldamodel.LdaModel(corpus, num_topics=num_topics, id2word = dictionary, passes=num_iters)
-    ldamodel.print_topics(num_topics)
 
+    # generate LDA model
+    ldamodel = models.ldamodel.LdaModel(corpus,
+                                        num_topics=num_topics,
+                                        id2word = dictionary,
+                                        alpha = 'auto',
+                                        passes=num_iters)
+    for i in range(num_topics):
+        print u'Topic {}: {}'.format(i," ".join([v for k,v in ldamodel.show_topic(i)]))
     
 def main():
     docs = read_documents('/Users/rohan/Projects/LyricsAnalysis/r-b-hip-hop-songs/2000/')
     gensim_lda(docs, 10, 1000, 10)
-    #lda_lda(docs, 10, 1000, 10)
+    lda_lda(docs, 10, 1000, 10)
 
     
 
