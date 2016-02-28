@@ -2,7 +2,7 @@
 
 get_billboards=./billboards.py
 billboards_playlist='r-b-hip-hop-songs'
-num_songs=40
+num_songs=300
 
 mkdir -p $billboards_playlist
 

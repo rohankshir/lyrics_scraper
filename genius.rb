@@ -56,7 +56,7 @@ puts filepath
 Genius.access_token = 'QfcNFORWYYHMb2l48a95UsfzXqNTjnbJZkn3TZZ6HTquOw58d7JQdERD8VnOa71y'
 puts keywords
 songs = Genius::Song.search(keywords) # Returns an array of Song objects
-song = get_song(songs, keywords)
+song = get_song(songs, keywords) # get the most likely Song from the results using simstring
 
 if song.nil?
   puts "ERROR: no song found. Either too ambiguous or no results"
