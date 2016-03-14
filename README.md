@@ -2,7 +2,7 @@
 
 This is a tool to help in the acquisition of song metadata and lyrics. It has two facets: 
 * Fetching the top songs in the Billboards playlist for the genre and time period of the user's choice
-* Fetching the lyrics of a song based on the title and artist information from (genius.com)[genius.com]
+* Fetching the lyrics of a song based on the title and artist information from (genius.com)[https://genius.com].
 
 # Usage
 
@@ -13,6 +13,8 @@ This is a tool to help in the acquisition of song metadata and lyrics. It has tw
 
 3. The years for which you want to fetch songs from. This is baked into the for loop `seq 2000 2015` which means from the years 2000 to 2015, download me the top 300 songs for the `r-b-hip-hop-songs`.
 
+
+To run: `./create_corpus.sh` 
 
 # Dependencies
 
