@@ -67,6 +67,6 @@ puts song.url
 doc = Nokogiri::HTML(open(song.url))
 
 file = File.open(filepath, 'w')
-doc.xpath("//*[contains(@class, 'lyrics_')]").each do |node|
+doc.xpath("//*[contains(@class, 'lyrics')]").each do |node|
    file.write( node.text )
 end
